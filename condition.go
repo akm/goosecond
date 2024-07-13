@@ -18,8 +18,8 @@ func NewCondition(predicate func() bool) *Condition {
 func (c *Condition) AddFileNameMigrationContext(up, down goose.GoMigrationContext) {
 	_, filename, _, _ := runtime.Caller(c.CallerSkip)
 	if c.predicate() {
-		goose.AddNamedMigrationContext(filename, up, down)
+		AddNamedMigrationContext(filename, up, down)
 	} else {
-		goose.AddNamedMigrationContext(filename, EmptyMigrationContext, EmptyMigrationContext)
+		AddNamedMigrationContext(filename, EmptyMigrationContext, EmptyMigrationContext)
 	}
 }
