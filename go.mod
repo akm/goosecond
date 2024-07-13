@@ -1,4 +1,4 @@
-module goosecond
+module github.com/akm/goosecond
 
 go 1.20
 
